@@ -19,10 +19,10 @@ on:
 jobs:
   tests:
     name: CI
-    # uses: canonical/identity-team/.github/workflows/charm-pull-request.yaml@IAM-1424-ck8s-operator-action
-    uses: canonical/identity-team/.github/workflows/charm-pull-request.yaml@IAM-1424-use-canonical-k8s
+    uses: canonical/identity-team/.github/workflows/charm-pull-request.yaml@IAM-1424-ck8s-operator-action
+    # uses: canonical/identity-team/.github/workflows/charm-pull-request.yaml@IAM-1424-use-canonical-k8s
     with:
       container-name: "kratos"
       use-charmcraftcache: true
-      node-size: large
-      # use-canonical-k8s: true
+      node-size: xlarge
+      use-canonical-k8s: true
