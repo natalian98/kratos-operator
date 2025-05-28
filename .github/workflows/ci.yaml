@@ -24,5 +24,5 @@ jobs:
     with:
       container-name: "kratos"
       use-charmcraftcache: true
-      node-size: xlarge
+      node-size: large
       use-canonical-k8s: true
