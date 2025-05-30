@@ -18,10 +18,10 @@ KUBECONFIG = os.environ.get("TESTING_KUBECONFIG", "~/.kube/config")
 
 def pytest_addoption(parser):
     """Parse additional pytest options.
+
     Args:
         parser: Pytest parser.
     """
-    
     parser.addoption("--charm-file", action="store")
     parser.addoption("--kube-config", action="store", default="~/.kube/config")
 
