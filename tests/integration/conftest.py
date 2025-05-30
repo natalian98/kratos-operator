@@ -21,6 +21,7 @@ def pytest_addoption(parser):
     Args:
         parser: Pytest parser.
     """
+    
     parser.addoption("--charm-file", action="store")
     parser.addoption("--kube-config", action="store", default="~/.kube/config")
 
@@ -52,7 +53,7 @@ async def password_secret(ops_test: OpsTest) -> Tuple[str, str]:
 
 
 @pytest_asyncio.fixture(scope="module")
-async def local_charm(ops_test: OpsTest) -> Path:
+async def local_charm(ops_test: OpsTest, pytestconfig: pytest.Config) -> Path:
     # in GitHub CI, charms are built with charmcraftcache and uploaded to $CHARM_PATH
     charm = pytestconfig.getoption("--charm-file") or os.getenv("CHARM_PATH")
     if not charm:
