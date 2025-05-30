@@ -25,4 +25,5 @@ jobs:
       container-name: "kratos"
       use-charmcraftcache: true
       node-size: large
-      use-canonical-k8s: true
+      modules: '["test_charm.py"]'
+      # use-canonical-k8s: true
